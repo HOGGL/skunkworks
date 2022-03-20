@@ -28,17 +28,17 @@ volumes:
   caddydata:
 services:
 
-  # wireguard:
-  #   build: ./services/wireguard
-  #   privileged: true
-  #   network_mode: host
-  #   restart: "on-failure"
-  #   ports:
-  #     - "7980:7980"
-  #   labels:
-  #     io.balena.features.kernel-modules: 1
-  #   volumes:
-  #     - wireguard:/wireguard
+  wireguard:
+    build: ./services/wireguard
+    privileged: true
+    network_mode: host
+    restart: "on-failure"
+    ports:
+      - "7980:7980"
+    labels:
+      io.balena.features.kernel-modules: 1
+    volumes:
+      - wireguard:/wireguard
 
   # pihole1:
   #   container_name: pihole
