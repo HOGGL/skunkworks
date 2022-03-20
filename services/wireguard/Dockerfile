@@ -1,4 +1,4 @@
-FROM balenalib/aarch64-debian as builder
+FROM balenalib/armv7hf-debian as builder
 
 RUN install_packages curl gcc-9 g++-9 build-essential libelf-dev libssl-dev pkg-config git flex bison python
 RUN sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 100 --slave /usr/bin/g++ g++ /usr/bin/g++-9 --slave /usr/bin/gcov gcov /usr/bin/gcov-9
@@ -37,7 +37,7 @@ RUN make -C $(pwd)/wireguard-tools/src -j$(nproc) && \
     mkdir -p $(pwd)/tools && \
     make -C $(pwd)/wireguard-tools/src DESTDIR=$(pwd)/tools install
 
-FROM balenalib/aarch64-debian
+FROM balenalib/armv7hf-debian
 
 
 WORKDIR /wireguard

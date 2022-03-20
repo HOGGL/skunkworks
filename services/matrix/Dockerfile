@@ -1,4 +1,4 @@
-FROM balenalib/aarch64-debian
+FROM balenalib/armv7hf-debian
 
 COPY config.sh config.sh
 

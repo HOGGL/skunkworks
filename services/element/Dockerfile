@@ -1,4 +1,4 @@
-FROM balenalib/aarch64-debian
+FROM balenalib/armv7hf-debian
 
 RUN install_packages tar
 
