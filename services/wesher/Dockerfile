@@ -6,4 +6,5 @@ RUN wget -O wesher https://github.com/costela/wesher/releases/latest/download/we
 COPY run.sh run.sh
 COPY hosts_updated.sh .
 COPY watch_hosts.sh .
+RUN chmod a+x wesher run.sh hosts_updated.sh watch_hosts.sh
 CMD [ "/run.sh" ]
